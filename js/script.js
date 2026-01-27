@@ -149,24 +149,37 @@ let projectImages = {};
 
 // Définir les captures d'écran pour chaque projet
 projectImages = {
-    'linkedin': ['images/screenshots/linkedin/1.jpg', 'images/screenshots/linkedin/2.jpg'],
-    'site-orange': ['images/screenshots/site-orange/1.jpg', 'images/screenshots/site-orange/2.jpg', 'images/screenshots/site-orange/3.jpg'],
-    'glpi': ['images/screenshots/glpi/1.jpg', 'images/screenshots/glpi/2.jpg'],
-    'wordpress': ['images/screenshots/wordpress/1.jpg', 'images/screenshots/wordpress/2.jpg'],
-    'shopify': ['images/screenshots/shopify/1.jpg'],
-    'projet-c': ['images/screenshots/projet-c/1.jpg', 'images/screenshots/projet-c/2.jpg'],
-    'calculatrice': ['images/screenshots/calculatrice/1.jpg'],
-    'page-liens': ['images/screenshots/page-liens/1.jpg'],
-    'jeu-bulle': ['images/screenshots/jeu-bulle/1.jpg', 'images/screenshots/jeu-bulle/2.jpg'],
-    'la-base-1': ['images/screenshots/la-base-1/1.jpg'],
-    'la-base-2': ['images/screenshots/la-base-2/1.jpg'],
-    'bacchus': ['images/screenshots/bacchus/1.jpg', 'images/screenshots/bacchus/2.jpg'],
-    'back-office': ['images/screenshots/back-office/1.jpg', 'images/screenshots/back-office/2.jpg']
+    
+    'Blog Évasion': ['images/screenshots/Blog Évasion/1.png', 'images/screenshots/Blog Évasion/2.png', 'images/screenshots/Blog Évasion/3.png', 'images/screenshots/Blog Évasion/4.png', 'images/screenshots/Blog Évasion/5.png', 'images/screenshots/Blog Évasion/6.png'],
+    'Installation de GLPI': ['images/screenshots/Installation de GLPI/1.png', 'images/screenshots/Installation de GLPI/2.png', 'images/screenshots/GLPI/3.png'],
+    'E-Enseignements': ['images/screenshots/E-Enseignements/1.png', 'images/screenshots/E-Enseignements/2.png', 'images/screenshots/E-Enseignements/3.png'],
+    'Shopify': ['images/screenshots/Shopify/1.png', 'images/screenshots/Shopify/2.png', 'images/screenshots/Shopify/3.png'],
+    'Snake en C': ['images/screenshots/Snake en C/1.png', 'images/screenshots/Snake en C/2.png', 'images/screenshots/Snake en C/2.png'],
+    'MoodScents': ['images/screenshots/MoodScents/1.png', 'images/screenshots/MoodScents/2.png', 'images/screenshots/MoodScents/3.png'],
+    'Autoecole': ['images/screenshots/Autoecole/1.png', 'images/screenshots/Autoecole/2.png', 'images/screenshots/Autoecole/3.png'],
+    'API': ['images/screenshots/API/1.jpeg', 'images/screenshots/API/2.jpeg', 'images/screenshots/API/3.jpeg', 'images/screenshots/API/4.jpeg', 'images/screenshots/API/5.jpeg', 'images/screenshots/API/6.jpeg'],
+    'Coding game': ['images/screenshots/Coding game/1.png', 'images/screenshots/Coding game/2.png', 'images/screenshots/Coding game/3.png'],
+ 
 };
 
 // Ouvrir la modal au clic sur une cellule
 document.querySelectorAll('.cell-filled').forEach(cell => {
     cell.addEventListener('click', function() {
+        // Vérifier si c'est la case LinkedIn
+        const linkedinUrl = this.getAttribute('data-linkedin');
+        if (linkedinUrl) {
+            window.open(linkedinUrl, '_blank');
+            return;
+        }
+        
+        // Vérifier si c'est une case GitHub
+        const githubUrl = this.getAttribute('data-github');
+        if (githubUrl) {
+            window.open(githubUrl, '_blank');
+            return;
+        }
+        
+        // Sinon, ouvrir la galerie d'images
         currentProject = this.getAttribute('data-project');
         if (projectImages[currentProject]) {
             currentImageIndex = 0;
@@ -182,9 +195,9 @@ document.querySelectorAll('.project-thumbnail').forEach(thumbnail => {
         // Définir les images pour les nouveaux projets
         if (!projectImages[currentProject]) {
             projectImages[currentProject] = [
-                `images/projects/${currentProject}/1.jpg`,
-                `images/projects/${currentProject}/2.jpg`,
-                `images/projects/${currentProject}/3.jpg`
+                `images/screenshots/${currentProject}/1.png`,
+                `images/screenshots/${currentProject}/2.png`,
+                `images/screenshots/${currentProject}/3.png`
             ];
         }
         currentImageIndex = 0;
