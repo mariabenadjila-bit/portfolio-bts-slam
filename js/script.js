@@ -59,26 +59,48 @@ document.querySelectorAll('section').forEach(section => {
     observer.observe(section);
 });
 
-// Gestion du formulaire de contact
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    const formMessage = document.getElementById('formMessage');
-    const nom = document.getElementById('nom').value;
-    const email = document.getElementById('email').value;
-    
-    // Simulation d'envoi
-    formMessage.className = 'form-message success';
-    formMessage.textContent = `Merci ${nom} ! Votre message a été envoyé avec succès. Je vous répondrai rapidement à ${email}.`;
-    
-    // Réinitialiser le formulaire
-    this.reset();
-    
-    // Masquer le message après 5 secondes
-    setTimeout(() => {
-        formMessage.style.display = 'none';
-    }, 5000);
+// EmailJS - envoi réel du formulaire de contact (compatible GitHub Pages)
+(function () {
+  emailjs.init("HiQ22YCuVMgUhn8RS"); // <-- remplace par ta Public Key
+})();
+
+document.getElementById("contactForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const formMessage = document.getElementById("formMessage");
+  const submitBtn = this.querySelector('button[type="submit"]');
+
+  formMessage.style.display = "block";
+  formMessage.className = "form-message";
+  formMessage.textContent = "Envoi en cours...";
+
+  submitBtn.disabled = true;
+  const originalText = submitBtn.textContent;
+  submitBtn.textContent = "Envoi...";
+
+  emailjs
+    .sendForm(
+      "service_jno22gk",   // <-- remplace
+      "template_jo6b0dj",  // <-- remplace
+      this
+    )
+    .then(() => {
+      formMessage.className = "form-message success";
+      formMessage.textContent = "Merci ! Votre message a bien été envoyé.";
+      this.reset();
+    })
+    .catch((error) => {
+      console.error("EmailJS error:", error);
+      formMessage.className = "form-message error";
+      formMessage.textContent =
+        "Erreur lors de l’envoi. Réessaie plus tard ou contacte-moi par email.";
+    })
+    .finally(() => {
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalText;
+    });
 });
+
 
 /* ==========================================
    ANIMATION DU NOM (TYPING EFFECT + COEUR)
@@ -153,10 +175,10 @@ projectImages = {
     'Blog Évasion': ['images/screenshots/Blog Évasion/1.png', 'images/screenshots/Blog Évasion/2.png', 'images/screenshots/Blog Évasion/3.png', 'images/screenshots/Blog Évasion/4.png', 'images/screenshots/Blog Évasion/5.png', 'images/screenshots/Blog Évasion/6.png'],
     'Installation de GLPI': ['images/screenshots/Installation de GLPI/1.png', 'images/screenshots/Installation de GLPI/2.png', 'images/screenshots/GLPI/3.png'],
     'E-Enseignements': ['images/screenshots/E-Enseignements/1.png', 'images/screenshots/E-Enseignements/2.png', 'images/screenshots/E-Enseignements/3.png'],
-    'Shopify': ['images/screenshots/Shopify/1.png', 'images/screenshots/Shopify/2.png', 'images/screenshots/Shopify/3.png'],
+    'Shopify': ['images/screenshots/Shopify/1.png', 'images/screenshots/Shopify/2.png', 'images/screenshots/Shopify/3.png', 'images/screenshots/Shopify/4.png'],
     'Snake en C': ['images/screenshots/Snake en C/1.png', 'images/screenshots/Snake en C/2.png', 'images/screenshots/Snake en C/2.png'],
     'MoodScents': ['images/screenshots/MoodScents/1.png', 'images/screenshots/MoodScents/2.png', 'images/screenshots/MoodScents/3.png'],
-    'Autoecole': ['images/screenshots/Autoecole/1.png', 'images/screenshots/Autoecole/2.png', 'images/screenshots/Autoecole/3.png'],
+    'Autoecole': ['images/screenshots/Autoecole/1.png', 'images/screenshots/Autoecole/2.png', 'images/screenshots/Autoecole/3.png', 'images/screenshots/Autoecole/4.png', 'images/screenshots/Autoecole/5.png', 'images/screenshots/Autoecole/6.png'],
     'API': ['images/screenshots/API/1.jpeg', 'images/screenshots/API/2.jpeg', 'images/screenshots/API/3.jpeg', 'images/screenshots/API/4.jpeg', 'images/screenshots/API/5.jpeg', 'images/screenshots/API/6.jpeg'],
     'Coding game': ['images/screenshots/Coding game/1.png', 'images/screenshots/Coding game/2.png', 'images/screenshots/Coding game/3.png'],
  
