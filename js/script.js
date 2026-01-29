@@ -174,9 +174,9 @@ projectImages = {
     
     'Blog Évasion': ['images/screenshots/Blog Évasion/1.png', 'images/screenshots/Blog Évasion/2.png', 'images/screenshots/Blog Évasion/3.png', 'images/screenshots/Blog Évasion/4.png', 'images/screenshots/Blog Évasion/5.png', 'images/screenshots/Blog Évasion/6.png'],
     'Installation de GLPI': ['images/screenshots/Installation de GLPI/1.png', 'images/screenshots/Installation de GLPI/2.png', 'images/screenshots/GLPI/3.png'],
-    'E-Enseignements': ['images/screenshots/E-Enseignements/1.png', 'images/screenshots/E-Enseignements/2.png', 'images/screenshots/E-Enseignements/3.png'],
+    'E-Enseignements': ['images/screenshots/E-Enseignements/1.png', 'images/screenshots/E-Enseignements/2.png', 'images/screenshots/E-Enseignements/3.png', 'images/screenshots/E-Enseignements/4.png', 'images/screenshots/E-Enseignements/5.png', 'images/screenshots/E-Enseignements/6.png'],
     'Shopify': ['images/screenshots/Shopify/1.png', 'images/screenshots/Shopify/2.png', 'images/screenshots/Shopify/3.png', 'images/screenshots/Shopify/4.png'],
-    'Snake en C': ['images/screenshots/Snake en C/1.png', 'images/screenshots/Snake en C/2.png', 'images/screenshots/Snake en C/2.png'],
+    'Snake en C': ['images/screenshots/Snake en C/1.png', 'images/screenshots/Snake en C/2.png', 'images/screenshots/Snake en C/3.png', 'images/screenshots/Snake en C/4.png', 'images/screenshots/Snake en C/5.png', 'images/screenshots/Snake en C/6.png'],
     'MoodScents': ['images/screenshots/MoodScents/1.png', 'images/screenshots/MoodScents/2.png', 'images/screenshots/MoodScents/3.png'],
     'Autoecole': ['images/screenshots/Autoecole/1.png', 'images/screenshots/Autoecole/2.png', 'images/screenshots/Autoecole/3.png', 'images/screenshots/Autoecole/4.png', 'images/screenshots/Autoecole/5.png', 'images/screenshots/Autoecole/6.png'],
     'API': ['images/screenshots/API/1.jpeg', 'images/screenshots/API/2.jpeg', 'images/screenshots/API/3.jpeg', 'images/screenshots/API/4.jpeg', 'images/screenshots/API/5.jpeg', 'images/screenshots/API/6.jpeg'],
