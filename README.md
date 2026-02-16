@@ -9,7 +9,7 @@ Ce dépôt contient mon portfolio réalisé dans le cadre du BTS SIO option SLAM
 - Git / GitHub
 
 ## Hébergement
-- IONOS (hébergement web)
+Github
 
 ## Contenu
 - Présentation
